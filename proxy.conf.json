@@ -1,0 +1,10 @@
+{
+    "/server/":{
+        "target":"http://localhost/alex/angular_videojuegos/",
+        "secure": false, 
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {"^/server":""}
+    }
+
+}

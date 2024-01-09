@@ -1,0 +1,10 @@
+<div>
+Rellena los datos de tu pedido<br>
+Nombre: <input type="text" [(ngModel)]="pedido.nombre" [ngModelOptions]="{standalone: true}" > <br>
+Apellidos: <input type="text" [(ngModel)]="pedido.apellidos" [ngModelOptions]="{standalone: true}" > <br>
+direccion completa de envio: <input type="text" [(ngModel)]="pedido.direccion" [ngModelOptions]="{standalone: true}" > <br>
+numero de tarjeta de credito (no insertar valores reales) : <input type="text" [(ngModel)]="pedido.tarjeta" [ngModelOptions]="{standalone: true}" > <br>
+<br>
+<button (click)="finalizarPedido()" >FINALIZAR PEDIDO</button>
+
+</div>

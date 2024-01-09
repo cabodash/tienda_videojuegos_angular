@@ -1,0 +1,10 @@
+<p>Productos en el carrito</p>
+<div class="contenedor-productos" *ngFor="let vc of videojuegosCarrito">
+    <p>Nombre: {{vc.videojuego.nombre}}</p>
+    <p>Precio/Unidad: {{vc.videojuego.precio}} €</p>
+    <p>Cantidad: {{vc.cantidad}}</p>
+</div>
+<div>
+    <button (click)="vaciarCarrito()">Vaciar Carrito</button>
+    <button (click)="realizarPedido()">Realizar pedido</button>
+</div>

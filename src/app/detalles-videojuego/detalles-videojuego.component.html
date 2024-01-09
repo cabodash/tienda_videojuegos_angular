@@ -1,0 +1,12 @@
+<h2>Detalles de {{idVideojuego}}</h2>
+
+<div class="contenedor-detalles">
+    <!-- <img class="imagen-detalles" src="server/images/videojuegos/{{videojuego.id}}.jpg"> -->
+    <img class="imagen-detalles" src="/server/images/videojuegos/{{videojuego.id}}.jpg">
+    <div class="textos">
+        <p>Nombre: <span>{{videojuego.nombre}}</span></p>
+        <p>Descripcion: <span>{{videojuego.descripcion}}</span></p>
+        <p>Precio: <span>{{videojuego.precio}} €</span></p>
+        <button (click)="agregarAlCarrito()">Añadir al carrito</button>
+    </div>
+</div>

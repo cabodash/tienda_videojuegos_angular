@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #272727;
+    color: #FFF;
+    font-family: "Roboto", sans-serif;
+}
+
+a, button {
+    background-color: #003087;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin: 10px;
+}

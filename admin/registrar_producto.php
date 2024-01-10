@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require "../librerias_php/setup_red_bean.php";
 
 $videojuego = R::dispense("videojuegos");

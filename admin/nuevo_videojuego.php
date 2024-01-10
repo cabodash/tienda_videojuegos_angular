@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,7 @@
 </head>
 
 <body>
-	<?php include("menu.html") ?>
+	<?php include("menu.php") ?>
 
 	<form class="formulario" action="registrar_producto.php" method="post" enctype="multipart/form-data">
 		<h2>Registrar Videojuego</h2>
@@ -68,7 +69,7 @@
 				<label th:text="${plataforma.nombre}"></label>
 			</div>
 		</div> -->
-		<input class="btn-enviar" type="submit" th:value="#{admin.videojuego.registro.registrar}" />
+		<input class="btn-enviar" type="submit" />
 	</form>
 </body>
 

@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administracion</title>
-</head>
+<?php 
+if (!isset($_SESSION["admin"])) {
+    include "login_admin.php";
+    die();//esto corta la ejecucion
+}
+?>
+
 
 <body>
     <a href="http://localhost:4200/">Volver a la Tienda</a>
@@ -17,5 +17,3 @@
     </div>
 
 </body>
-
-</html>

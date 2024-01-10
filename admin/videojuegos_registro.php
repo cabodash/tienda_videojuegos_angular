@@ -10,7 +10,6 @@
 
 <body>
 
-	<div th:insert="fragments/general.html :: menu"></div>
 
 
 

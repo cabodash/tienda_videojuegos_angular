@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { VideojuegoCarrito } from '../model/videojuegoCarrito';
 import { TiendaService } from '../services/tienda.service';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrito',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, NgIf],
   templateUrl: './carrito.component.html',
   styleUrl: './carrito.component.css',
 })
@@ -27,7 +27,9 @@ export class CarritoComponent {
       .subscribe((res) => (this.videojuegosCarrito = res));
   }
   vaciarCarrito() {
-    alert('Por hacer');
+    this.servicioTienda
+      .vaciarCarrito()
+      .subscribe(res => (res == "ok")?this.videojuegosCarrito = []:alert("No se pudo vaciar el carrito"));
   }
   realizarPedido(){
     if( this.videojuegosCarrito.length === undefined || this.videojuegosCarrito.length == 0  ){

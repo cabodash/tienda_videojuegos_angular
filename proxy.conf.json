@@ -1,6 +1,6 @@
 {
     "/server/":{
-        "target":"http://localhost/alex/angular_videojuegos/",
+        "target":"http://localhost/alex/tienda_videojuegos_angular/",
         "secure": false, 
         "logLevel": "debug",
         "changeOrigin": true,

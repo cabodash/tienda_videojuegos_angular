@@ -15,7 +15,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php include ("menu.html"); ?>
+    <?php include ("menu.php"); ?>
 
     <div>
         <h2>Pedidos realizados en la tienda con angular</h2>

@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php include("menu.html");?>
+    <?php include("menu.php");?>
     <p>Registro realizado correctamente</p>
 
     

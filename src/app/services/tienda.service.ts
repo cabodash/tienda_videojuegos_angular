@@ -10,7 +10,7 @@ import { Pedido } from '../model/pedido';
 })
 export class TiendaService {
   //ruta_webservices = '/angular_videojuegos/'; //esto es para el hosting
-  ruta_webservices = "/server/" //esto es para local
+  ruta_webservices = '/server/'; //esto es para local
   //Todas las operaciones con el servicor se realizaran desde este servicio
   constructor(private http: HttpClient) {}
 
@@ -38,10 +38,21 @@ export class TiendaService {
       }
     );
   }
-  obtenerVideojuegosCarrito(): Observable<VideojuegoCarrito[]>{
-    return this.http.get<VideojuegoCarrito[]>(`${this.ruta_webservices}web_services/obtenerVideojuegosCarrito.php`);
+  obtenerVideojuegosCarrito(): Observable<VideojuegoCarrito[]> {
+    return this.http.get<VideojuegoCarrito[]>(
+      `${this.ruta_webservices}web_services/obtenerVideojuegosCarrito.php`
+    );
   }
-  registrarPedido(p:Pedido):Observable<string>{
-    return this.http.post<string>(this.ruta_webservices+"web_services/registrarPedido.php", p )
+  registrarPedido(p: Pedido): Observable<string> {
+    return this.http.post<string>(
+      this.ruta_webservices + 'web_services/registrarPedido.php',
+      p
+    );
+  }
+
+  vaciarCarrito(): Observable<string> {
+    return this.http.get<string>(
+      this.ruta_webservices + 'web_services/vaciarCarrito.php'
+    );
   }
 }

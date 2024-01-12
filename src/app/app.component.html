@@ -1,10 +1,11 @@
-<div>Parte cliente, ejemplo de comunicacion de unn servicio ed angular con webservice hecho con php</div>
-<a href="/server/admin">Ir a administracion</a>
-<!-- <a href="web_services/admin">Ir a administracion</a> -->
-<div>
-  <a href="#" routerLink="/listado">Listado de productos</a>
-  &nbsp; &nbsp; &nbsp; &nbsp;
-  <a href="#" routerLink="/carrito">Carrito</a>
+<div class="navbar">
+  <a class="btn-primary" href="#" routerLink="/listado">Listado de productos</a>
+  <a class="btn-primary" href="#" routerLink="/carrito">Carrito</a>
+
+  <div class="last">
+    <!-- <a class="btn-primary" href="/admin/">Ir a administracion</a> -->
+    <a class="btn-primary" href="/server/admin">Ir a administracion</a>
+  </div>
 </div>
 
 <router-outlet></router-outlet>

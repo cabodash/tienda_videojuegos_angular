@@ -2,12 +2,13 @@
 
 <div class="contenedor-listado">
     <div class="item" *ngFor="let v of videojuegos">
-        <p>Titulo: <span>{{v.nombre}}</span></p>
+        <!-- <img class="imagen-item" src="/images/videojuegos/{{v.id}}.jpg">-->
+        <img class="imagen-item" src="/server/images/videojuegos/{{v.id}}.jpg"> 
+        <h3>Titulo: <span>{{v.nombre}}</span></h3>
         <p>Genero: <span>{{v.precio}}</span></p>
         <p>Descripcion: <span>{{v.descripcion}}</span></p>
         <p>Id: <span>{{v.id}}</span></p>
-        <!-- <img class="imagen-item" src="server/images/videojuegos/{{v.id}}.jpg">-->
-        <img class="imagen-item" src="/server/images/videojuegos/{{v.id}}.jpg"> 
+        
         <button (click)="verDetalles(v)">Ver detalles</button>
     </div>
 </div>

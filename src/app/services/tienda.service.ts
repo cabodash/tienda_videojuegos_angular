@@ -9,9 +9,10 @@ import { Pedido } from '../model/pedido';
   providedIn: 'root',
 })
 export class TiendaService {
-  //ruta_webservices = '/angular_videojuegos/'; //esto es para el hosting
+  //ruta_webservices = '/'; //esto es para el hosting
   ruta_webservices = '/server/'; //esto es para local
-  //Todas las operaciones con el servicor se realizaran desde este servicio
+
+  //Todas las operaciones con el servidor se realizaran desde este servicio
   constructor(private http: HttpClient) {}
 
   obtenerVideojuegos(): Observable<Videojuego[]> {

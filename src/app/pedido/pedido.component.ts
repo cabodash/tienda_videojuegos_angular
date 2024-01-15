@@ -4,39 +4,53 @@ import { FormsModule } from '@angular/forms';
 import { TiendaService } from '../services/tienda.service';
 import { Router } from '@angular/router';
 import { Validador } from '../validations/validador';
+import { formulario_inputs } from '../utils/formulario_inputs';
 
 @Component({
   selector: 'app-pedido',
   standalone: true,
-  imports: [FormsModule],//FormsModule es encesario para poder usar ngModel en el html
+  imports: [FormsModule], //FormsModule es encesario para poder usar ngModel en el html
   templateUrl: './pedido.component.html',
-  styleUrl: './pedido.component.css'
+  styleUrl: './pedido.component.css',
 })
 export class PedidoComponent {
+  pedido: Pedido = {} as Pedido;
 
-  pedido:Pedido = {} as Pedido
+  constructor(
+    private validador: Validador,
+    private servicioTienda: TiendaService,
+    private router: Router,
+    private formulario_inputs:formulario_inputs
+  ) {}
 
+  ngOnInit(): void {
+    this.formulario_inputs.inputs
+  }
 
-  constructor(private validador:Validador, private servicioTienda:TiendaService, private router:Router){}
+  
 
-  finalizarPedido(){
-    console.log("mandar a servidor: ")
-    console.log(this.pedido)
+  finalizarPedido() {
+    console.log('mandar a servidor: ');
+    console.log(this.pedido);
 
     //Validar la informacion
-    if(
+    if (
       this.validador.validarNombre(this.pedido.nombre) &&
       this.validador.validarDireccion(this.pedido.direccion) &&
       this.validador.validarTarjeta(this.pedido.tarjeta)
-    ){
-      this.servicioTienda.registrarPedido(this.pedido).subscribe( res => (res=="ok")?this.pedidoOk():alert("no se pudo registrar el pedido") )
+    ) {
+      this.servicioTienda
+        .registrarPedido(this.pedido)
+        .subscribe((res) =>
+          res == 'ok'
+            ? this.pedidoOk()
+            : alert('no se pudo registrar el pedido')
+        );
     }
   }
 
-  pedidoOk(){
-    alert("pedido realizado correctamente")
-    this.router.navigate(["listado"])
+  pedidoOk() {
+    alert('pedido realizado correctamente');
+    this.router.navigate(['listado']);
   }
-
-
 }

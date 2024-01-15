@@ -4,5 +4,6 @@ export class Videojuego {
   descripcion?: string;
   precio?: number;
   desarrollador?: string;
-  fechaLanzamiento?: Date;
+  genero?: string
+  fecha_lanzamiento?: Date;
 }

@@ -29,7 +29,16 @@
                     </p>
                     <p>Precio:
                         <?= $v["precio"] ?>
-                    </p><br>
+                    €</p>
+                    <p>Desarrollador:
+                        <?= $v["desarrollador"] ?>
+                    </p>
+                    <p>Genero:
+                        <?= $v["genero"] ?>
+                    </p>
+                    <p>Fecha de Lanzamiento:
+                        <?= $v["fecha_lanzamiento"] ?>
+                    </p>
                     <a class="btn-primary" onclick="return confirm('estas seguro?')" href="?idBorrar=<?= $v['id'] ?>">Borrar
                         producto</a>
                 </div>

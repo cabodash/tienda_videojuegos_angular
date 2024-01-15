@@ -3,12 +3,11 @@
 
     <div class="contenedor-items">
         <div class="item" *ngFor="let v of videojuegos">
+            <h3><span>{{v.nombre}}</span></h3>
             <!-- <img class="imagen-item" src="/images/videojuegos/{{v.id}}.jpg">-->
             <img alt="imagen del producto" class="imagen-item" src="/server/images/videojuegos/{{v.id}}.jpg">
-            <h3>Titulo: <span>{{v.nombre}}</span></h3>
-            <p>Genero: <span>{{v.precio}}</span></p>
+            <p>Precio: <span>{{v.precio}}</span>€</p>
             <p>Descripcion: <span>{{v.descripcion}}</span></p>
-            <p>Id: <span>{{v.id}}</span></p>
 
             <button class="btn-primary" (click)="verDetalles(v)">Ver detalles</button>
         </div>

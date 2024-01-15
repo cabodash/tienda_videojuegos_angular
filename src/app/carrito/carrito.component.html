@@ -1,15 +1,21 @@
-<div *ngIf="videojuegosCarrito.length; else carritoVacio">
-    <p>Productos en el carrito</p>
-    <div class="contenedor-productos" *ngFor="let vc of videojuegosCarrito">
-        <p>Nombre: {{vc.videojuego.nombre}}</p>
-        <p>Precio/Unidad: {{vc.videojuego.precio}} €</p>
-        <p>Cantidad: {{vc.cantidad}}</p>
+<div class="carrito">
+    <h2>Productos en el carrito</h2>
+    <div *ngIf="videojuegosCarrito.length; else carritoVacio">
+        <div class="contenedor-productos">
+            <div class="productos" *ngFor="let vc of videojuegosCarrito">
+                <h3>{{vc.videojuego.nombre}}</h3>
+                <!-- <img class="imagen-item" src="/images/videojuegos/{{vc.videojuego.id}}.jpg">-->
+                <img alt="imagen del producto" class="imagen-item" src="/server/images/videojuegos/{{vc.videojuego.id}}.jpg">
+                <p>Precio/Unidad: {{vc.videojuego.precio}}€</p>
+                <p>Cantidad: {{vc.cantidad}}</p>
+            </div>
+        </div>
+        <div class="enlaces">
+            <button class="btn-primary" (click)="vaciarCarrito()">Vaciar Carrito</button>
+            <button class="btn-primary" (click)="realizarPedido()">Realizar pedido</button>
+        </div>
     </div>
-    <div class="enlaces">
-        <button (click)="vaciarCarrito()">Vaciar Carrito</button>
-        <button (click)="realizarPedido()">Realizar pedido</button>
-    </div>
+    <ng-template #carritoVacio>
+        <p>El carrito está vacío.</p>
+    </ng-template>  
 </div>
-<ng-template #carritoVacio>
-    <p>El carrito está vacío.</p>
-</ng-template>

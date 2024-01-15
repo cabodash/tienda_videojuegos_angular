@@ -1,12 +1,28 @@
-<h2>Detalles de {{idVideojuego}}</h2>
+
 
 <div class="contenedor-detalles">
-    <!-- <img class="imagen-detalles" src="server/images/videojuegos/{{videojuego.id}}.jpg"> -->
-    <img class="imagen-detalles" src="/server/images/videojuegos/{{videojuego.id}}.jpg">
-    <div class="textos">
-        <h3><span>{{videojuego.nombre}}</span></h3>
-        <p>Descripcion: <span>{{videojuego.descripcion}}</span></p>
-        <p>Precio: <span>{{videojuego.precio}} €</span></p>
-        <button (click)="agregarAlCarrito()">Añadir al carrito</button>
+    <h2>{{videojuego.nombre}}</h2>
+    <div class="cabecera">
+        <!-- <img class="imagen-detalles" src="server/images/videojuegos/{{videojuego.id}}.jpg"> -->
+        <img class="imagen-detalles" src="/server/images/videojuegos/{{videojuego.id}}.jpg">
+        <div class="textos">
+            <p>Genero: <span>{{videojuego.genero}}</span></p>
+            <p>Precio: <span>{{videojuego.precio}}€</span></p>
+            <button class="btn-primary" (click)="agregarAlCarrito()">Añadir al carrito</button>
+        </div>
+    </div>
+    <div class="mas-datos">
+        <div>
+            <h2>Descripcion</h2>
+            <p>{{videojuego.descripcion}}</p>
+        </div>
+        <div>
+            <h4>Desasrrollador</h4>
+            <p>{{videojuego.desarrollador}}</p>
+        </div>
+        <div>
+            <h4>Fecha de lanzamiento</h4>
+            <p>{{videojuego.fecha_lanzamiento}}</p>
+        </div>
     </div>
 </div>

@@ -3,4 +3,6 @@ export class Videojuego {
   nombre?: string;
   descripcion?: string;
   precio?: number;
+  desarrollador?: string;
+  fechaLanzamiento?: Date;
 }

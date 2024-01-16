@@ -8,7 +8,7 @@ import { Injectable } from "@angular/core";
 export class Validador {
 
     regexp_nombre: RegExp = /^[a-z áéíóú]{2,10}$/g;
-    regexp_direccion: RegExp = /^[a-zA-Z0-9 .,áéíóúñ\\:/ºª]{5,20}$/;
+    regexp_direccion: RegExp = /^[a-zA-Z0-9 .,áéíóúñ\\:/ºª]{5,50}$/;
     regexp_numero_tarjeta: RegExp = /^[0-9]{16}$/;
 
 
@@ -34,7 +34,7 @@ export class Validador {
         if (this.regexp_direccion.test(direccion)) {
             return true;
         } else {
-            alert("Direccion debe tener de 5 a 20 caracteres y solo debe tener letras, numeros, espacios y los carqacteres / \\ : º ª");
+            alert("Direccion debe tener de 5 a 50 caracteres y solo debe tener letras, numeros, espacios y los carqacteres / \\ : º ª");
             return false;
         }
     }

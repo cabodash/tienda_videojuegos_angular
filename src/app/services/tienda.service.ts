@@ -13,7 +13,7 @@ export class TiendaService {
   ruta_webservices = '/server/'; //esto es para local
 
   //Todas las operaciones con el servidor se realizaran desde este servicio
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   obtenerVideojuegos(): Observable<Videojuego[]> {
     console.log(
@@ -54,6 +54,13 @@ export class TiendaService {
   vaciarCarrito(): Observable<string> {
     return this.http.get<string>(
       this.ruta_webservices + 'web_services/vaciarCarrito.php'
+    );
+  }
+
+  borrarProducto(idVideojuego: number): Observable<string> {
+    return this.http.post<string>(
+      this.ruta_webservices + 'web_services/borrarProducto.php',
+      idVideojuego
     );
   }
 }

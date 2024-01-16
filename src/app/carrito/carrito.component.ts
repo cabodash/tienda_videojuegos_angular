@@ -39,4 +39,15 @@ export class CarritoComponent {
     }
     this.router.navigate(["pedido"])
   }
+  borrarProducto(idVideojuego:number){
+    this.servicioTienda.borrarProducto(idVideojuego)
+    .subscribe(res => {
+      if (res == "ok") {
+        alert("Producto borrado")
+        location.reload();
+      } else {
+        alert("No se pudo borrar el videojuego");
+      }
+    })
+  }
 }

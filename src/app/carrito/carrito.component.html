@@ -8,6 +8,14 @@
                 <img alt="imagen del producto" class="imagen-item" src="/server/images/videojuegos/{{vc.videojuego.id}}.jpg">
                 <p>Precio/Unidad: {{vc.videojuego.precio}}€</p>
                 <p>Cantidad: {{vc.cantidad}}</p>
+                <div class="opciones-item">
+                    <div class="cantidades">
+
+                    </div>
+                    <div class="borrar">
+                        <button class="btn-primary" (click)="borrarProducto(vc.videojuego.id)">Borrar</button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="enlaces">
@@ -16,6 +24,8 @@
         </div>
     </div>
     <ng-template #carritoVacio>
-        <p>El carrito está vacío.</p>
+        <p class="vacio">El carrito está vacío. 
+            <a href="#" routerLink="/listado">Listado de productos</a>
+        </p>
     </ng-template>  
 </div>

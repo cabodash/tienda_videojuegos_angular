@@ -1,5 +1,6 @@
 export class formulario_inputs {
     inputs(){
+        console.log("inputs entrando")
         let inputContainers = document.querySelectorAll('.input-box');
             inputContainers.forEach(element => {
                 let input = element.querySelector("input");

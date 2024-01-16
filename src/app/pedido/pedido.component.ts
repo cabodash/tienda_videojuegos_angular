@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { Pedido } from '../model/pedido';
 import { FormsModule } from '@angular/forms';
 import { TiendaService } from '../services/tienda.service';
@@ -10,8 +10,14 @@ import { formulario_inputs } from '../utils/formulario_inputs';
   selector: 'app-pedido',
   standalone: true,
   imports: [FormsModule], //FormsModule es encesario para poder usar ngModel en el html
+  providers: [formulario_inputs],
   templateUrl: './pedido.component.html',
   styleUrl: './pedido.component.css',
+})
+
+
+@Injectable({
+  providedIn: 'root'
 })
 export class PedidoComponent {
   pedido: Pedido = {} as Pedido;
@@ -24,7 +30,7 @@ export class PedidoComponent {
   ) {}
 
   ngOnInit(): void {
-    this.formulario_inputs.inputs
+    this.formulario_inputs.inputs();
   }
 
   
@@ -54,3 +60,5 @@ export class PedidoComponent {
     this.router.navigate(['listado']);
   }
 }
+
+

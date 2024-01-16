@@ -26,48 +26,63 @@
         <div>
             <h2>Pedidos realizados en la tienda con angular</h2>
         </div>
-        <?php
-        $id_pedido = 0;
-        $id_pedido_anterior = 0;
-        foreach ($pedidos as $p => $pedido) {
-            $id_pedido = $pedido["id"];
+        <div class="contenedor-pedidos">
+            <?php
+            $id_pedido = 0;
+            $id_pedido_anterior = 0;
+            $empezando = true;
+            foreach ($pedidos as $p => $pedido) {
+                $id_pedido = $pedido["id"];
             ?>
-            <?php if ($id_pedido != $id_pedido_anterior) { ?>
-                <div style="margin: 10px;">
-                    <p>Nombre:
-                        <?= $pedido["nombre"] ?>
-                    </p>
-                    <p>Apellidos:
-                        <?= $pedido["apellidos"] ?>
-                    </p> a
-                    <p>Direccion:
-                        <?= $pedido["direccion"] ?>
-                    </p>
-                    <p>Nº tarjeta:
-                        <?= $pedido["tarjeta"] ?>
-                    </p>
-                </div>
-            <?php } ?>
+                <div class="pedido">
+                    <?php if ($id_pedido != $id_pedido_anterior) {
+                        if (!$empezando) {
+                            echo "</div>"; //Cierra el div de productos anteriores
+                            echo "</div>"; //Cierra el div de pedido
+                        }
+                        $empezando = false;
+                    ?>
+                        <div class="cont-datos-usuario" style="margin: 10px;">
+                            <p>Nombre:
+                                <?= $pedido["nombre"] ?>
+                            </p>
+                            <p>Apellidos:
+                                <?= $pedido["apellidos"] ?>
+                            </p>
+                            <p>Direccion:
+                                <?= $pedido["direccion"] ?>
+                            </p>
+                            <p>Nº tarjeta:
+                                <?= $pedido["tarjeta"] ?>
+                            </p>
+                        </div>
+                        <div class="">
+                    <?php } ?>
 
-            <div style="margin: 10px; background-color: darkgray;">
-                <h3>Productos del pedido</h3>
-                <div>
-                    <p>Nombre:
-                        <?= $pedido["nombre"] ?>
-                    </p>
-                    <p>Precio:
-                        <?= $pedido["precio"] ?>
-                    </p>
-                    <p>Descripcion:
-                        <?= $pedido["descripcion"] ?>
-                    </p>
+                    <div class="item-producto-pedido">
+                        <div>
+                            <p>Nombre:
+                                <?= $pedido["nombre"] ?>
+                            </p>
+                            <p>Precio:
+                                <?= $pedido["precio"] ?>
+                            </p>
+                            <p>Descripcion:
+                                <?= $pedido["descripcion"] ?>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
             <?php
-            $id_pedido_anterior = $id_pedido;
-        }
-        ?>
+                $id_pedido_anterior = $id_pedido;
+            }
+            if (!$empezando) {
+                echo "</div>"; //Cierra el ultimo div de productos anteriores
+                echo "</div>"; //Cierra el div del ultimo pedido
+            }
+            ?>
+        </div>
     </div>
 
 

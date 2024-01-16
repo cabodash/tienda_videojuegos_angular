@@ -52,7 +52,7 @@ body {
 }
 
 
-/* Listado administracion */
+
 .cont-listado {
     display: flex;
     flex-direction: column;
@@ -60,6 +60,48 @@ body {
     align-items: center;
     gap: 2rem;
     padding: 30px;
+}
+.contenedor-pedidos{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: #303134;
+    border-radius: 10px;
+}
+.pedido{
+    background-color: #393a3e;
+    border-radius: 10px;
+}
+.cont-datos-usuario{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.item-producto-pedido{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 10px;
+    background-color: #424347;
+    border-radius: 10px;
+}
+
+.item-producto-pedido div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .contenedor-items {

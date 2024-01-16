@@ -7,6 +7,7 @@ $videojuego = R::dispense("videojuegos");
 $videojuego->nombre = $_POST["nombre"];
 $videojuego->descripcion = $_POST["descripcion"];
 $videojuego->precio = $_POST["precio"];
+$videojuego->plataforma = $_POST["plataforma"];
 $videojuego->desarrollador = $_POST["desarrollador"];
 $videojuego->genero = $_POST["genero"];
 $videojuego->fechaLanzamiento = $_POST["fecha_lanzamiento"];

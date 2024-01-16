@@ -3,4 +3,5 @@ export class Pedido{
     apellidos:string = "";
     direccion:string = "";
     tarjeta:string = "";
+    comentario:string = "";
 }

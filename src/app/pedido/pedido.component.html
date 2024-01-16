@@ -23,9 +23,12 @@
         <label for="tarjeta">Numero de tarjeta de credito</label>
         <p class="suggestion">(no insertar valores reales)</p>
     </div>
-    <script>
-        
-    </script>
+
+    <div class="textarea-box no-error">
+        <textarea name="comentario" [(ngModel)]="pedido.comentario" [ngModelOptions]="{standalone: true}"
+            required></textarea>
+        <label for="comentario">Comentario adicional</label>
+    </div>
 
     <button class="btn-primary" (click)="finalizarPedido()">Finalizar pedido</button>
 

@@ -42,8 +42,10 @@ export class PedidoComponent {
     //Validar la informacion
     if (
       this.validador.validarNombre(this.pedido.nombre) &&
+      this.validador.validarApellidos(this.pedido.apellidos) &&
       this.validador.validarDireccion(this.pedido.direccion) &&
-      this.validador.validarTarjeta(this.pedido.tarjeta)
+      this.validador.validarTarjeta(this.pedido.tarjeta) &&
+      this.validador.validarComentario(this.pedido.comentario) 
     ) {
       this.servicioTienda
         .registrarPedido(this.pedido)

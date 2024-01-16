@@ -30,59 +30,43 @@
             <?php
             $id_pedido = 0;
             $id_pedido_anterior = 0;
-            $empezando = true;
+            $primer_pedido = true;
             foreach ($pedidos as $p => $pedido) {
                 $id_pedido = $pedido["id"];
+                if ($id_pedido != $id_pedido_anterior) {
+                    if($primer_pedido){          
+                        $primer_pedido = false;
+                    }else{
+                        echo "</div>"; //Este div seria el cierre del padido anterior en caso de que
+                                       //este pedido sea diferente al anterior
+                    }
             ?>
-                <div class="pedido">
-                    <?php if ($id_pedido != $id_pedido_anterior) {
-                        if (!$empezando) {
-                            echo "</div>"; //Cierra el div de productos anteriores
-                            echo "</div>"; //Cierra el div de pedido
-                        }
-                        $empezando = false;
-                    ?>
-                        <div class="cont-datos-usuario" style="margin: 10px;">
-                            <p>Nombre:
-                                <?= $pedido["nombre"] ?>
-                            </p>
-                            <p>Apellidos:
-                                <?= $pedido["apellidos"] ?>
-                            </p>
-                            <p>Direccion:
-                                <?= $pedido["direccion"] ?>
-                            </p>
-                            <p>Nº tarjeta:
-                                <?= $pedido["tarjeta"] ?>
-                            </p>
-                        </div>
-                        <div class="">
-                    <?php } ?>
+            <div class="pedido">
+                <div class="cont-datos-usuario" style="margin: 10px;">
+                    <p>Nombre: <?= $pedido["nombre_pedido"] ?></p>
+                    <p>Apellidos:  <?= $pedido["apellidos"] ?> </p>
+                    <p>Direccion:  <?= $pedido["direccion"] ?></p>
+                    <p>Nº tarjeta: <?= $pedido["tarjeta"] ?> </p>
+                    <p>Comentario: <?= $pedido["comentario"] ?> </p>
 
-                    <div class="item-producto-pedido">
-                        <div>
-                            <p>Nombre:
-                                <?= $pedido["nombre"] ?>
-                            </p>
-                            <p>Precio:
-                                <?= $pedido["precio"] ?>
-                            </p>
-                            <p>Descripcion:
-                                <?= $pedido["descripcion"] ?>
-                            </p>
-                        </div>
-                    </div>
+                </div>
+                <?php } ?>
+
+                <div class="item-producto-pedido">
+                    <p>Nombre: <?= $pedido["nombre_videojuego"] ?></p>
+                    <p>Precio: <?= $pedido["precio"] ?>€</p>
+                    <p>Descripcion: <?= $pedido["descripcion"] ?></p>
                 </div>
 
-            <?php
+                <?php
                 $id_pedido_anterior = $id_pedido;
-            }
-            if (!$empezando) {
-                echo "</div>"; //Cierra el ultimo div de productos anteriores
-                echo "</div>"; //Cierra el div del ultimo pedido
-            }
-            ?>
-        </div>
+                }
+                ?>
+        <!--</div> -->    <!--/Este div seria el cierre de el contenedor pedido, pero si en el siguiente
+                                ciclo del bucle es el mismo pedido, no habria que cerrarlo. Se cerrará cuando
+                                detecte que el pedido cambia al principio en el if del php/  -->
+            </div> <!-- Este es el cierre final de fuera del bucle, necesario para que la 
+                        estructura de la pagina web se mantenga perfecta-->
     </div>
 
 

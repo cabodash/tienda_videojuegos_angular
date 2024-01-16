@@ -1,12 +1,12 @@
 
 
 <div class="contenedor-detalles">
-    <h2>{{videojuego.nombre}}</h2>
+    <h2 class="nombre">{{videojuego.nombre}}</h2>
     <div class="cabecera">
         <!-- <img class="imagen-detalles" src="server/images/videojuegos/{{videojuego.id}}.jpg"> -->
         <img class="imagen-detalles" src="/server/images/videojuegos/{{videojuego.id}}.jpg">
         <div class="textos">
-            <p>Genero: <span>{{videojuego.genero}}</span></p>
+            <p><span>{{videojuego.plataforma}}</span></p>
             <p>Precio: <span>{{videojuego.precio}}€</span></p>
             <button class="btn-primary" (click)="agregarAlCarrito()">Añadir al carrito</button>
         </div>
@@ -16,6 +16,11 @@
         <div class="dato">
             <h2>Descripcion</h2>
             <p>{{videojuego.descripcion}}</p>
+        </div>
+        <div class="separador2"></div>
+        <div class="dato">
+            <h4>Género</h4>
+            <p>{{videojuego.genero}}</p>
         </div>
         <div class="separador2"></div>
         <div class="dato">

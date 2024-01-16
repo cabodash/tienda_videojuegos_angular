@@ -39,6 +39,11 @@
 		</div>
 
 		<div class="input-box no-error">
+			<input type="text" step=".01" name="plataforma" required minlength="2" maxlength="30" />
+			<label for="plataforma">Plataforma</label>
+		</div>
+
+		<div class="input-box no-error">
 			<input type="text" step=".01" name="genero" required minlength="2" maxlength="30" />
 			<label for="genero">Genero</label>
 		</div>

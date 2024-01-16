@@ -1,6 +1,7 @@
 
 .contenedor-detalles{
     width: 90%;
+    max-width: 1200px;
     margin: 20px auto;
     display: flex;
     flex-direction: column;
@@ -19,6 +20,9 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
+}
+.nombre{
+    margin-bottom: 20px;
 }
 .textos{
     width: 300px;

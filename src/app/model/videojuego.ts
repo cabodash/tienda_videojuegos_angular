@@ -6,4 +6,5 @@ export class Videojuego {
   desarrollador?: string;
   genero?: string
   fecha_lanzamiento?: Date;
+  plataforma?:string;
 }

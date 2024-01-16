@@ -30,6 +30,9 @@
                     <p>Precio:
                         <?= $v["precio"] ?>
                     €</p>
+                    <p>Platadorma:
+                        <?= $v["plataforma"] ?>
+                    </p>
                     <p>Desarrollador:
                         <?= $v["desarrollador"] ?>
                     </p>

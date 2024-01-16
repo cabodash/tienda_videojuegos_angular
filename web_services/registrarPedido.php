@@ -10,6 +10,7 @@ $pedido->nombre = $pedidoRecibido->nombre;
 $pedido->apellidos = $pedidoRecibido->apellidos;
 $pedido->direccion = $pedidoRecibido->direccion;
 $pedido->tarjeta = $pedidoRecibido->tarjeta;
+$pedido->comentario = $pedidoRecibido->comentario;
 $id_pedido = R::store($pedido);
 
 //registro los productos del carrito asociandolos a la id de pedido registrado
